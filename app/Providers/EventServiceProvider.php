@@ -8,6 +8,8 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Event;
 use App\Events\ProductCreated;
 use App\Listeners\ProductCreatedListener;
+use App\Observers\ProductObserver;
+use App\Product;    
 
 
 class EventServiceProvider extends ServiceProvider
@@ -35,6 +37,8 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+
+        Product::observe(ProductObserver::class);
 
         //
     }

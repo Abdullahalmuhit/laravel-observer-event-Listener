@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Events\ProductCreated;
 use Session;
+
 class Product extends Model
 {
     // protected $dispatchesEvents = [
@@ -16,13 +17,13 @@ class Product extends Model
         'name', 'detail'
     ];
 
-    public static function boot(){
-        parent::boot();
+    // public static function boot(){
+    //     parent::boot();
 
-        static::created(function($product){
-            Session::flash('message', 'This is muhit!'); 
-        });
+    //     static::created(function($product){
+    //         Session::flash('message', 'This is muhit!'); 
+    //     });
 
 
-    }
+    // }
 }
